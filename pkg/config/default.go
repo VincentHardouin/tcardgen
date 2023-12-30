@@ -17,12 +17,14 @@ var defaultCnf = DrawingConfig{
 		},
 		MaxWidth:    946,
 		LineSpacing: ptrInt(10),
+		Enabled:     true,
 	},
 	Category: &TextOption{
 		Start:      &Point{X: 126, Y: 119},
 		FgHexColor: "#8D8D8D",
 		FontSize:   42,
 		FontStyle:  fontfamily.Regular,
+		Enabled:    true,
 	},
 	Info: &TextOption{
 		Start:      &Point{X: 227, Y: 441},
@@ -30,6 +32,7 @@ var defaultCnf = DrawingConfig{
 		FontSize:   38,
 		FontStyle:  fontfamily.Regular,
 		Separator:  "・",
+		Enabled:    true,
 	},
 	Tags: &BoxTextsOption{
 		TextOption: TextOption{
@@ -42,6 +45,7 @@ var defaultCnf = DrawingConfig{
 		BoxPadding: &Padding{Top: 6, Right: 10, Bottom: 6, Left: 10},
 		BoxSpacing: ptrInt(6),
 		BoxAlign:   box.AlignRight,
+		Enabled:    true,
 	},
 }
 

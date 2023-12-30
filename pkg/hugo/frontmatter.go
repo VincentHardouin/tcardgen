@@ -2,6 +2,7 @@ package hugo
 
 import (
 	"io"
+	"log"
 	"os"
 	"strings"
 	"time"
@@ -47,25 +48,25 @@ func parseFrontMatter(r io.Reader) (*FrontMatter, error) {
 
 	fm := &FrontMatter{}
 	if fm.Title, err = getString(&cfm, fmTitle); err != nil {
-		return nil, err
+		log.Println(err)
 	}
 	if isArray := isArray(&cfm, fmAuthor); isArray {
 		if fm.Author, err = getFirstStringItem(&cfm, fmAuthor); err != nil {
-			return nil, err
+			log.Println(err)
 		}
 	} else {
 		if fm.Author, err = getString(&cfm, fmAuthor); err != nil {
-			return nil, err
+			log.Println(err)
 		}
 	}
 	if fm.Category, err = getFirstStringItem(&cfm, fmCategories); err != nil {
-		return nil, err
+		log.Println(err)
 	}
 	if fm.Tags, err = getAllStringItems(&cfm, fmTags); err != nil {
-		return nil, err
+		log.Println(err)
 	}
 	if fm.Date, err = getContentDate(&cfm); err != nil {
-		return nil, err
+		log.Println(err)
 	}
 
 	return fm, nil
